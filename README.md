@@ -57,9 +57,10 @@ Commands and Key-Mappings
 
 The `:CtrlPPythonic` command will be available to directly invoke Ctrl-P in `pythonic` mode.
 
-This is not bound to any key-mapping by default, so you may want to add the following to your _.vimrc_:
+This is not bound to any key-mapping by default, so you may want to add
+something like the following to your _.vimrc_:
 
-    nnoremap <Leader>/ :CtrlPPythonic<Cr>
+    nnoremap <Leader>py :CtrlPPythonic<Cr>
 
 License
 -------
