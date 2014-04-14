@@ -34,11 +34,11 @@ Installation
 
 ### [Vundle](https://github.com/gmarik/vundle.git)
 
-    :BundleInstall tacahiroy/ctrlp-funky
+    :BundleInstall jeetsukumaran/ctrlp-funky
 
 Add the line below into your _.vimrc_.
 
-    Bundle 'tacahiroy/ctrlp-pythonic'
+    Bundle 'jeetsukumaran/ctrlp-pythonic'
 
 ### Manually
 
@@ -60,7 +60,21 @@ The `:CtrlPPythonic` command will be available to directly invoke Ctrl-P in `pyt
 This is not bound to any key-mapping by default, so you may want to add
 something like the following to your _.vimrc_:
 
+```
     nnoremap <Leader>py :CtrlPPythonic<Cr>
+```
+
+Or, since it makes no sense to invoke this extension on a non-Python file,
+something like the following may be more suitable:
+
+```
+    if has("autocmd")
+        augroup CtrlPPythonic
+            au!
+            autocmd FileType python nnoremap <Leader><Leader> :CtrlPPythonic<CR>
+        augroup END
+    endif
+```
 
 License
 -------
